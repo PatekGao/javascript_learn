@@ -62,7 +62,22 @@ function change_image(){
 <!--change HTML images-->
 
 <!--change HTML style-->
-
+<script>
+let j = 0;
+function change_color(){
+    j++;
+    if(j === 4) j=0;
+    const y = document.getElementById("demo");
+    switch (j){
+        case 0:y.style.color="#ff0000"; break;
+        case 1:y.style.color="#00ff00"; break;
+        case 2:y.style.color="#0000ff"; break;
+        case 3:y.style.color="#000000"; break;
+        default:y.style.color="#ffffff"; break
+    }
+}
+</script>
+<button type="button" onclick="change_color()">CLICK HERE TO CHANGE COLOR!</button>
 <!--change HTML style-->
 </body>
 </html>
