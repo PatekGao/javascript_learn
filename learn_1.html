@@ -5,11 +5,6 @@
     <title>learn_1(SteveGao)</title>
 </head>
 <body>
-
-<p>
-    test
-</p>
-
 <!--output write stream-->
 <script>
 document.write("<h1>my first web page</h1>");
@@ -24,7 +19,7 @@ document.write("<p>my second paragraph</p>");
 
 <!--output pic-->
 <p></p>
-<img src="/images/test.png" width="300" height="300" alt="a bubble pic"/>
+<img id = "demo1" onclick="change_image()" src="/images/test.png" width="300" height="300" alt="a bubble pic"/>
 <!--output pic-->
 
 <!--button reaction-->
@@ -35,27 +30,39 @@ document.write("<p>my second paragraph</p>");
 <!--change HTML contents-->
 <p id = "demo">JavaScript can change the content of HTML.</p>
 <script>
-    let i = 0;
-    function change_content() {
-        i++;
-        if(i === 4) i = 0;
-        const x = document.getElementById("demo");
-        switch (i){
-            case 0: x.innerHTML = "Click again!"; break;
-            case 1: x.innerHTML = "Come on, try again!"; break;
-            case 2: x.innerHTML = "Do it again!"; break;
-            case 3: x.innerHTML = "Stop!"; break;
-            default: x.innerHTML = "Hello JavaScript!"; break;
-        }
+let i = 0;
+function change_content() {
+    i++;
+    if(i === 4) i = 0;
+    const x = document.getElementById("demo");
+    switch (i){
+        case 0: x.innerHTML = "Click again!"; break;
+        case 1: x.innerHTML = "Come on, try again!"; break;
+        case 2: x.innerHTML = "Do it again!"; break;
+        case 3: x.innerHTML = "Stop!"; break;
+        default: x.innerHTML = "Hello JavaScript!"; break;
     }
+}
 </script>
 <button type="button" onclick="change_content()">CLICK HERE TO CHANGE CONTENT!</button>
 <!--change HTML contents-->
 
 <!--change HTML images-->
+<p>Try clicking the pic!</p>
 <script>
-
+function change_image(){
+    const element = document.getElementById("demo1");
+    if(element.src.match("test")){
+        element.src = "/images/after.jpeg";
+    }else if(element.src.match("after")){
+        element.src = "/images/test.png";
+    }
+}
 </script>
 <!--change HTML images-->
+
+<!--change HTML style-->
+
+<!--change HTML style-->
 </body>
 </html>
